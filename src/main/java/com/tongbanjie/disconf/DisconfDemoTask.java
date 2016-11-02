@@ -2,6 +2,7 @@ package com.tongbanjie.disconf;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Service;
  * @version 2014-6-17
  */
 @Service
-public class DisconfDemoTask {
+public class DisconfDemoTask implements InitializingBean {
 
     protected static final Logger LOGGER = LoggerFactory
             .getLogger(DisconfDemoTask.class);
@@ -47,5 +48,9 @@ public class DisconfDemoTask {
         }
 
         return 0;
+    }
+
+    public void afterPropertiesSet() throws Exception {
+        run();
     }
 }
