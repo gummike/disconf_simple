@@ -67,4 +67,15 @@ public class SimpleRedisService implements InitializingBean, DisposableBean {
 
         return null;
     }
+
+    public void changeJedis() {
+
+        LOGGER.info("start to change jedis hosts to: " + jedisConfig.getHost()
+                + " : " + jedisConfig.getPort());
+
+        jedis = JedisUtil.createJedis(jedisConfig.getHost(),
+                jedisConfig.getPort());
+
+        LOGGER.info("change ok.");
+    }
 }
