@@ -16,9 +16,9 @@ import com.baidu.disconf.client.common.update.IDisconfUpdate;
  * @author liaoqiqi
  * @version 2014-6-17
  */
-@Service
-@Scope("singleton")
-@DisconfUpdateService(confFileKeys = "redis.properties")
+//@Service
+//@Scope("singleton")
+//@DisconfUpdateService(confFileKeys = "redis.properties")
 public class SimpleRedisServiceUpdateCallback implements IDisconfUpdate {
 
     protected static final Logger LOGGER = LoggerFactory.getLogger(SimpleRedisServiceUpdateCallback.class);
