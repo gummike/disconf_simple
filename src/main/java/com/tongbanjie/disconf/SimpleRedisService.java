@@ -23,8 +23,7 @@ import redis.clients.jedis.Jedis;
 @Scope("singleton")
 public class SimpleRedisService implements InitializingBean, DisposableBean {
 
-    protected static final Logger LOGGER = LoggerFactory
-            .getLogger(SimpleRedisService.class);
+    protected static final Logger LOGGER = LoggerFactory.getLogger(SimpleRedisService.class);
 
     // jedis 实例
     private Jedis jedis = null;
@@ -50,8 +49,7 @@ public class SimpleRedisService implements InitializingBean, DisposableBean {
      */
     public void afterPropertiesSet() throws Exception {
 
-        jedis = JedisUtil.createJedis(jedisConfig.getHost(),
-                jedisConfig.getPort());
+        jedis = JedisUtil.createJedis(jedisConfig.getHost(), jedisConfig.getPort());
     }
 
     /**
